@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Kamaln7\Toastr\ToastrServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Toastr' => Kamaln7\Toastr\Facades\Toastr::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
     ],
 
