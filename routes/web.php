@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\Admin\Setting\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/admin/home', [AdminHomeController::class, 'index'])->middleware('role:admin')->name('admin.dashboard');
+Route::get('/admin', [AdminHomeController::class, 'index'])->middleware('role:admin')->name('admin.dashboard');
+Route::group(['prefix'=>'admin', 'middleware'=>'role:admin'], function(){
+	Route::get('/home', [AdminHomeController::class, 'index'])->middleware('role:admin')->name('admin.dashboard');
+	Route::resource('setting', SettingController::class)->except(['destroy', 'edit', 'show']);
+});
