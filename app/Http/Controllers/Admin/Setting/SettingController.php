@@ -15,8 +15,8 @@ class SettingController extends Controller
     protected $folderName='admin.setting.';
     protected $iconWidth=80;
     protected $iconHeight=80;
-    protected $logoWidth=779;
-    protected $logoHeight=734;
+    protected $logoWidth=3182;
+    protected $logoHeight=1116;
     function __construct(ImageSupport $imageSupport, Setting $setting)
     {
         $this->middleware('auth');
@@ -102,7 +102,7 @@ class SettingController extends Controller
         if(!$request->file('icon')==''){
             $this->imageSupport->deleteImg('setting', $this->setting->icon);
             $icon = $this->imageSupport->saveAnyImg($request, 'setting', 'icon', $this->iconWidth, $this->iconHeight);
-            $this->Setting->icon = $icon;
+            $this->setting->icon = $icon;
         }
         if(!$request->file('logo')==''){
             $this->imageSupport->deleteImg('setting', $this->setting->logo);

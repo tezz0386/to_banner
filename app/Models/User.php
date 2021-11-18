@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Admin\Banner\Banner;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -56,5 +57,9 @@ class User extends Authenticatable
         ];
     }
 
+    public function banners()
+    {
+        return $this->hasMany(Banner::class, 'created_by');
+    }
 
 }

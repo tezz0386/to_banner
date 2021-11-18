@@ -101,10 +101,13 @@
   <script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
   <!-- <script src="{{asset('dashboard/js/demo/chart-area-demo.js')}}"></script> -->
   <script src="{{asset('dashboard/js/demo/chart-pie-demo.js')}}"></script>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="{{asset('ckeditor/build/ckeditor.js')}}"></script>
   <script src="{{asset('js/custom.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::render() !!}
   @stack('js')
 </body>
 </html>

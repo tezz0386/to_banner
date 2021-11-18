@@ -1,6 +1,9 @@
-+@extends('layouts.admin-app')
+@extends('layouts.admin-app')
 @section('content')
 <div class="row ml-5 mr-5">
+    <ul class="list-unstyled">
+        <a href="#">About Us</a>
+    </ul>
     <div class="col-md-12 col-lg-12">
         @if(isset($setting))
         <form action="{{route('setting.update', $setting)}}" method="post" enctype="multipart/form-data">
@@ -28,7 +31,7 @@
                                     <div class="form-group">
                                         <label>Icon:</label><br>
                                         <label>
-                                             <img src="@if(!$setting->icon=='') {{asset('uploads/setting/thumbnail/'.$setting->icon)}} @else {{asset('placeholder.png')}} @endif" id="iconThumbnail" height="150" width="150">
+                                             <img src="@if(!$setting->icon=='') {{asset('uploads/setting/thumbnail/'.$setting->icon)}} @else {{asset('placeholder.png')}} @endif" id="iconThumbnail" height="100" width="150">
                                              <input type="file" name="icon" hidden="hidden" id="icon">
                                         </label>
                                         @error('icon')
@@ -40,7 +43,7 @@
                                     <div class="form-group">
                                         <label>Logo:</label><br>
                                         <label>
-                                            <img src="@if(!$setting->logo=='') {{asset('uploads/setting/thumbnail/'.$setting->logo)}} @else {{asset('placeholder.png')}} @endif" id="logoThumbnail"  height="150" width="150">
+                                            <img src="@if(!$setting->logo=='') {{asset('uploads/setting/thumbnail/'.$setting->logo)}} @else {{asset('placeholder.png')}} @endif" id="logoThumbnail"  height="100" width="150">
                                             <input type="file" name="logo" hidden="hidden" id="logo">
                                         </label>
                                         @error('logo')
