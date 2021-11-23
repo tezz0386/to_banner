@@ -17,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 Route::get('/admin', [AdminHomeController::class, 'index'])->middleware('role:admin')->name('admin.dashboard');
