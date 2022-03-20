@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateBannersTable extends Migration
 {
@@ -19,7 +19,9 @@ class CreateBannersTable extends Migration
             $table->string('heading');
             $table->text('summary');
             $table->string('image');
-            $table->boolean('status')->default(false);
+            $table->string('button_text', 191)->default('explore');
+            $table->string('url', 191)->nullable();
+            $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->timestamps();
         });
     }
